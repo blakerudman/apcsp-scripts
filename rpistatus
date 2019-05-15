@@ -1,1 +1,11 @@
-echo hi
+#!/bin/bash
+
+for i in "rpi01" "rpi02" "rpi03" "rpi4" "rpi5" "rpi06" "rpi07" "rpi08" "rpi09" "rpi10" "rpi11" "rpi12" "rpi13" "rpi14" "rpi15" "rpi16" "rpi17" "rpi18" "rpi19" "rpi20" 
+do
+        ping -c 1 $i > /dev/null 2>&1
+        if [ $? -eq 0 ]; then
+        echo $i "is alive"
+        else
+        echo $i "is dead"
+        fi
+done 
